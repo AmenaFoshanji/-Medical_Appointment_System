@@ -31,7 +31,7 @@ public class Appointment {
 
     public Appointment() {
     }
-
+ 
     public void cancelAppointment(){
         Scanner sc = new Scanner(System.in);
         System.out.println("确定要删除此预约吗（Y OR N）");
