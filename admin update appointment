@@ -32,7 +32,7 @@ public class admin {
                 System.out.println("manageAppointment");
             }else if (menu.equals("viewDoctor")){
                 System.out.println("viewDoctor");
-            }else if (menu.equals("appointment")){
+            }else if (menu.equals("appointment")){ 
                 System.out.println("appointment");
             }else if (menu.equals("sendRemainerToPatient")){
                 System.out.println("sendRemainerToPatient");
