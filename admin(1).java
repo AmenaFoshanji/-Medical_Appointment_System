@@ -18,63 +18,62 @@ public class admin {
         username = input.next();
 
         System.out.println("password: ");
-        password = input.next();、
-、/* still revising
-
-        if (username.equals(user) && password.equals(pass)){
+        password = input.next();
+            
+            if (username.equals(user) && password.equals(pass)){
             System.out.println("You are logged in");
-            System.out.println("Menu: manageUsers,manageAppointment,viewDoctor,appointment," +
-                    "sendRemainerToPatient,manageWaitingList");
+            System.out.println("manageUsers,manageAppointment,viewDoctor,appointment," +
+                    "sendReminderToPatient,manageWaitingList");
             String menu = input.nextLine();
             if (menu.equals("manageUsers")){
-                System.out.println("manageUsers");
+                manageUsers();
             }else if (menu.equals("manageAppointment")){
-                System.out.println("manageAppointment");
+                manageAppointment();
             }else if (menu.equals("viewDoctor")){
-                System.out.println("viewDoctor");
+                viewDoctor();
             }else if (menu.equals("appointment")){
-                System.out.println("appointment");
-            }else if (menu.equals("sendRemainerToPatient")){
-                System.out.println("sendRemainerToPatient");
+                appointment();
+            }else if (menu.equals("sendReminderToPatient")){
+                sendReminderToPatient();
             }else if (menu.equals("manageWaitingList")){
-                System.out.println("manageWaitingList");
+                manageWaitingList();
             }else{
-                System.out.println("");
+                System.out.println("Error");
             }
         }
-*/
+
 
 
     }
 
-    public void manageUsers(){
+   public void manageUsers(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter yes to manage users");
+        System.out.println("Enter(Y or N)");
         String str = sc.nextLine();
         if (str.equals("Y")){
-           
-            System.out.println("Add doctor/nurse(Y or N)");
+            
+            System.out.println("Add doctor or nurse(Y or N)");
             String s = sc.nextLine();
             if (s.equals("Y")) {
-                System.out.println("Please enter the info");
+                System.out.println("enter information");
                 String info = sc.nextLine();
-                System.out.println("Successful!");
+                System.out.println("successful");
             }
-            System.out.println("Update doctor/nurse(Y or N)");
+            System.out.println("update octor or nurse(Y or N)");
             s = sc.nextLine();
             if (s.equals("Y")) {
-                System.out.println("Please enter the information you would like to update");
+                System.out.println("enter information");
                 String info = sc.nextLine();
-                System.out.println("Information has updated to "+info);
+                System.out.println("successful);
             }
-            System.out.println("Delete doctor/nurse(Y or N)");
+            System.out.println("delete doctor or nurse(Y or N)");
             s = sc.nextLine();
             if (s.equals("Y")) {
-                System.out.println("Enter the name of teh person's info you'd like to delete");
+                System.out.println("enter information");
                 String info = sc.nextLine();
-                System.out.println("Successful!");
+                System.out.println("successful");
             }
-            System.out.println("Enter user page(Y or N)");
+            System.out.println("User page(Y or N)");
             s = sc.nextLine();
             if (s.equals("Y")){
                 User user = new User();
@@ -83,7 +82,9 @@ public class admin {
         }else if (str.equals("N")){
             System.out.println("Not entering user page");
         }else {
-            System.out.println("Error, please try again");
+            System.out.println("error");
+        }else {
+            login(user,pass);
         }
     }
 
@@ -94,7 +95,7 @@ public class admin {
         if (str.equals("Y")){
             System.out.println("Enter appointment managing page");
         }else if (str.equals("N")){
-            System.out.println("Not enter appointment managing page");
+            login(user,pass);
         }else {
             System.out.println("Error, please try again");
         }
@@ -141,7 +142,7 @@ public class admin {
         if (str.equals("Y")){
             System.out.println("entering manageWaitingList page");
         }else if (str.equals("N")){
-            System.out.println("not entering manageWaitingList page");
+            login(user,pass);
         }else {
             System.out.println("Error, please try again");
         }
